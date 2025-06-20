@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Димон, вопрос жизни</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: linear-gradient(to right, #fefcea, #f1da36);
+      font-family: 'Comic Sans MS', sans-serif;
+      text-align: center;
+      padding: 60px 20px;
+      color: #222;
+    }
+    h1 {
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+    button {
+      font-size: 22px;
+      padding: 14px 30px;
+      margin: 15px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .yes {
+      background-color: #4caf50;
+      color: white;
+    }
+    .no {
+      background-color: #f44336;
+      color: white;
+    }
+    button:hover {
+      transform: scale(1.1);
+    }
+    #response {
+      margin-top: 40px;
+      font-size: 24px;
+    }
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Димон, идём бухать? 🍻</h1>
+
+  <button class="yes" onclick="respond('yes')">✅ Да</button>
+  <button class="no" onclick="respond('no')">❌ Нет</button>
+
+  <div id="response"></div>
+
+  <audio id="music" autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-funkyelement.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function respond(answer) {
+      const text = answer === 'yes'
+        ? '🥹 Обнять и плакать, ты лучший мужик на этом свете!'
+        : '👎 Пидора ответ';
+      document.getElementById('response').innerText = text;
+    }
+  </script>
+
+</body>
+</html>
